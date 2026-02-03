@@ -68,13 +68,12 @@ python scripts/eval_policy.py --checkpoint checkpoints/model_best.pt --env HalfC
 |-------------|--------|-------------|--------------|-------------|----------|
 | HalfCheetah-v4 | Baseline | 480K | 920K | 9,605 | High |
 | HalfCheetah-v4 | **Dreaming** | **360K** | **640K** | **10,206** | **24× lower** |
-| Ant-v4 | Baseline | 640K | — | ~4,000 | High |
-| Ant-v4 | **Dreaming** | **440K** | — | **~5,200** | Lower |
+
 
 **Key findings:**
-- 🚀 Up to **31% fewer environment steps** to reach performance thresholds
-- 📈 **6% higher mean return** at 1M steps on HalfCheetah
-- 📉 **24× lower cross-seed variance** for more reliable training
+- Up to **31% fewer environment steps** to reach performance thresholds
+- **6% higher mean return** at 1M steps on HalfCheetah
+-  **24× lower cross-seed variance** for more reliable training
 
 **Commands used for results:**
 ```bash
@@ -126,20 +125,6 @@ PopSAN-spiking_world_model_dreaming/
 
 ---
 
-## Citation
-
-If you use this work, please cite:
-
-```bibtex
-@thesis{spiking_world_model_dreaming_2026,
-  title={Spiking World Models with Uncertainty-Guided Dreaming for Continuous Control},
-  author={Rohit, Saket},
-  year={2026},
-  school={Your University}
-}
-```
-
----
 
 ## Abstract
 
