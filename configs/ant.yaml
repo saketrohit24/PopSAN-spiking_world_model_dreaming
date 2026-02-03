@@ -1,0 +1,10 @@
+# Ant-v4 configuration
+# Inherits from default.yaml
+
+env_name: "Ant-v4"
+
+# Ant-specific tuning (higher dimensional, needs more caution)
+dream_start_step: 75000
+dream_horizon: 4
+epistemic_threshold: 0.4
+num_ensemble: 5

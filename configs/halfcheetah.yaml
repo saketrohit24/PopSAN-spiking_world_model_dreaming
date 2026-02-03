@@ -1,0 +1,9 @@
+# HalfCheetah-v4 configuration
+# Inherits from default.yaml
+
+env_name: "HalfCheetah-v4"
+
+# HalfCheetah-specific tuning
+dream_start_step: 50000
+dream_horizon: 5
+epistemic_threshold: 0.5

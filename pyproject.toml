@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spiking-dreamer"
+version = "0.1.0"
+description = "Model-based RL with Spiking Neural Network World Models"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Rohit"}
+]
+keywords = [
+    "reinforcement-learning",
+    "spiking-neural-networks",
+    "world-models",
+    "model-based-rl",
+    "td3",
+    "mbpo",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+    "gymnasium>=0.29.0",
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "tensorboard>=2.12.0",
+    "wandb>=0.15.0",
+    "mujoco>=2.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/rohit/spiking-dreamer"
+Repository = "https://github.com/rohit/spiking-dreamer"
+
+[project.scripts]
+spiking-dreamer-train = "scripts.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100

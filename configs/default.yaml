@@ -1,0 +1,57 @@
+# Default configuration for PopSAN + Spiking World Model Dreaming
+
+# Environment
+env_name: "HalfCheetah-v4"
+seed: 0
+
+# Training
+total_steps: 1_000_000
+start_timesteps: 25000
+batch_size: 256
+eval_freq: 10000
+replay_size: 1_000_000
+
+# TD3
+gamma: 0.99
+tau: 0.005
+policy_freq: 2
+expl_noise: 0.1
+policy_noise: 0.2
+noise_clip: 0.5
+
+# Actor (SNN - PopSAN)
+actor_lr: 0.0003
+en_pop_dim: 10
+de_pop_dim: 10
+hidden_sizes: [256, 256]
+mean_range: [-1, 1]
+std: 0.2236  # sqrt(0.05)
+spike_ts: 5
+
+# Critic
+critic_lr: 0.0003
+
+# Spiking World Model
+wm_lr: 0.0003
+wm_weight_decay: 0.00001
+wm_hidden_dim: 256
+wm_num_layers: 2
+wm_spike_steps: 8
+population_size: 8
+num_scales: 3
+num_ensemble: 3
+
+# Dreaming (MBPO/MOPO style)
+enable_dreaming: true
+dream_start_step: 50000
+dream_freq: 250
+dream_batch_size: 256
+dreams_per_phase: 4
+dream_horizon: 5
+epistemic_threshold: 0.5
+adaptive_threshold: true
+uncertainty_penalty: 1.0
+max_dream_ratio: 10.0
+
+# Device
+device: "cuda"
