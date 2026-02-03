@@ -6,7 +6,7 @@
 [![PyTorch 2.0+](https://img.shields.io/badge/pytorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 
 
-This repository implements a **spiking neural network world model** with uncertainty-guided dreaming for sample-efficient reinforcement learning. It extends [PopSAN](https://github.com/xxx/popsan) (Population-coded Spiking Actor Network) with an ensemble of spiking world models for MBPO/MOPO-style imagined rollouts.
+This repository implements a **spiking neural network world model** with uncertainty-guided dreaming for sample-efficient reinforcement learning. It extends [PopSAN](https://github.com/xxx/popsan) (Population-coded Spiking Actor Network) with an ensemble of spiking world models for MBPO style imagined rollouts.
 
 **[W&B Project](https://wandb.ai/rohit-deepa/Half_Cheetah_Dreaming?nw=nwusersaketrohit24)** 
 
