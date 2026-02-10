@@ -8,7 +8,7 @@
 
 This repository implements a **spiking neural network world model** with uncertainty-guided dreaming for sample-efficient reinforcement learning. It extends [PopSAN](https://github.com/xxx/popsan) (Population-coded Spiking Actor Network) with an ensemble of spiking world models for MBPO style imagined rollouts.
 
-**[W&B Project](https://wandb.ai/rohit-deepa/Spiking-World-Model-Thesis/overview)** 
+**[W&B Project](https://wandb.ai/rohit-deepa/Spiking-World-Model-Thesis/overview)||
 **[Powerpoint](https://docs.google.com/presentation/d/1fAt5grWoVqZ8tmExvKVxMFQmcHUWD0Hk07oeN7MOD0M/edit?usp=sharing)
 
 
