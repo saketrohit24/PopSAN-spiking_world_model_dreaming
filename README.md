@@ -125,16 +125,6 @@ PopSAN-spiking_world_model_dreaming/
 | `dreamer.py` | MBPO/MOPO-style imagination with horizon-adaptive uncertainty filtering and pessimistic reward penalty |
 | `td3_agent.py` | TD3 agent with 50/50 real/dream training split, world model training, and dream phase orchestration |
 
----
-
-
-## Abstract
-
-> Model-based reinforcement learning offers sample efficiency gains through synthetic experience generation, yet conventional approaches rely on energy-intensive artificial neural networks. Spiking neural networks (SNNs) provide a promising alternative due to their event-driven computation and compatibility with neuromorphic hardware.
->
-> This thesis introduces a **spiking world model framework with uncertainty-guided dreaming** for continuous control tasks in MuJoCo. The proposed approach extends PopSAN by integrating an **ensemble of spiking world models** composed of adaptive current-based leaky integrate-and-fire neurons, multi-scale temporal integration, and hybrid spike–membrane readouts. **Epistemic uncertainty** is quantified through ensemble disagreement and used to selectively filter unreliable imagined transitions.
->
-> On HalfCheetah-v4, uncertainty-guided dreaming **reduces environment steps by up to 31%**, improves mean return (10,206 vs. 9,605), and **reduces variance by 24×**. On Ant-v4, the method saves **200K–260K steps** and achieves up to **63% higher performance** at intermediate stages.
 
 ---
 
