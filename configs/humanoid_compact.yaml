@@ -1,0 +1,15 @@
+# HumanoidCompact-v0 configuration
+# Inherits from default.yaml
+#
+# Compact observation (45 dims = qpos + qvel) with full 17-dim action space.
+# More conservative than Ant due to unstable bipedal dynamics and larger
+# action space. Longer warmup gives the world model more real data before
+# dreaming on contact-rich 3D dynamics.
+
+env_name: "HumanoidCompact-v0"
+
+# Conservative dreaming schedule
+dream_start_step: 100000      # longer warmup (bipedal balance is harder)
+dream_horizon: 3              # short horizon (contact dynamics compound fast)
+epistemic_threshold: 0.35     # stricter gating than Ant (0.4)
+num_ensemble: 3               # keep at 3 (sufficient for 45-dim state)
