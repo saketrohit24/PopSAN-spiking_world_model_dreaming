@@ -25,6 +25,7 @@ from torch.utils.tensorboard import SummaryWriter
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from spiking_dreamer import TD3_SpikingDreamer, ReplayBuffer, eval_policy
+from spiking_dreamer.envs import make_env
 
 
 def load_config(config_path: str, default_path: str = "configs/default.yaml") -> dict:
@@ -77,7 +78,7 @@ def main():
     seed = config["seed"]
     
     # Environment setup
-    env = gym.make(env_name)
+    env = make_env(env_name)
     env.reset(seed=seed)
     env.action_space.seed(seed)
     torch.manual_seed(seed)
@@ -150,7 +151,7 @@ def main():
         
         next_state, reward, d1, d2, _ = env.step(action)
         done = d1 or d2
-        done_bool = float(done) if episode_timesteps < env._max_episode_steps else 0
+        done_bool = float(done) if episode_timesteps < env.spec.max_episode_steps else 0
         
         replay_buffer.add(state, action, next_state, reward, done_bool, is_dream=False)
         state = next_state
