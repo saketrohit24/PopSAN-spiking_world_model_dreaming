@@ -1,0 +1,11 @@
+# Humanoid-v4 configuration
+# Inherits from default.yaml
+
+env_name: "Humanoid-v4"
+
+# Humanoid is higher dimensional and generally needs more warmup.
+start_timesteps: 50000
+dream_start_step: 100000
+dream_horizon: 3
+epistemic_threshold: 0.3
+num_ensemble: 5

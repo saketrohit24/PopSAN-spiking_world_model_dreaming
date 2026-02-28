@@ -13,12 +13,11 @@ from pathlib import Path
 
 import numpy as np
 import torch
-import gymnasium as gym
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from spiking_dreamer import TD3_SpikingDreamer, ReplayBuffer
+from spiking_dreamer import TD3_SpikingDreamer, ReplayBuffer, make_env
 
 
 def load_policy(checkpoint_path: str, env, device):
@@ -114,7 +113,7 @@ def main():
     
     # Setup
     render_mode = "human" if args.render else None
-    env = gym.make(args.env, render_mode=render_mode)
+    env = make_env(args.env, render_mode=render_mode)
     env.reset(seed=args.seed)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

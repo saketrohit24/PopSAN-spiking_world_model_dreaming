@@ -56,6 +56,20 @@ python scripts/train.py --config configs/halfcheetah.yaml --seed 0 --no-dreaming
 python scripts/train.py --config configs/ant.yaml --seed 0 --wandb
 ```
 
+### Humanoid (Full Observation)
+
+```bash
+python scripts/train.py --config configs/humanoid.yaml --seed 0 --wandb
+```
+
+### Humanoid Compact (45-D Observation)
+
+`HumanoidCompactLite-v0` keeps only `qpos[2:] + qvel` (45 dims) from `Humanoid-v4` while keeping the same 17-D action space and full dynamics.
+
+```bash
+python scripts/train.py --config configs/humanoid_compact.yaml --seed 0 --wandb
+```
+
 ### Evaluation
 
 ```bash
@@ -95,7 +109,9 @@ PopSAN-spiking_world_model_dreaming/
 ├── configs/                    # YAML hyperparameter configs
 │   ├── default.yaml
 │   ├── halfcheetah.yaml
-│   └── ant.yaml
+│   ├── ant.yaml
+│   ├── humanoid.yaml
+│   └── humanoid_compact.yaml
 ├── src/spiking_dreamer/        # Main package
 │   ├── surrogates.py           # Surrogate gradients (SuperSpike)
 │   ├── neurons.py              # Adaptive LIF neurons
@@ -108,6 +124,7 @@ PopSAN-spiking_world_model_dreaming/
 │   ├── actor.py                # PopSAN spiking actor
 │   ├── critic.py               # TD3 twin critic
 │   ├── td3_agent.py            # Training glue (TD3 + world model + dreaming)
+│   ├── envs.py                 # Custom env wrappers + env factory
 │   └── eval.py                 # Policy evaluation
 ├── scripts/
 │   ├── train.py                # Main training script

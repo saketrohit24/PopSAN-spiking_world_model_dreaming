@@ -4,7 +4,8 @@ Policy evaluation utilities.
 """
 
 import numpy as np
-import gymnasium as gym
+
+from .envs import make_env
 
 
 def eval_policy(policy, env_name, seed, episodes=10):
@@ -20,7 +21,7 @@ def eval_policy(policy, env_name, seed, episodes=10):
     Returns:
         Tuple of (mean_reward, std_reward)
     """
-    eval_env = gym.make(env_name)
+    eval_env = make_env(env_name)
     eval_env.reset(seed=seed + 100)
     
     avg_reward = 0.0

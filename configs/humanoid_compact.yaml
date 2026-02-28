@@ -1,0 +1,11 @@
+# HumanoidCompactLite-v0 configuration (qpos + qvel only, 45-dim state)
+# Inherits from default.yaml
+
+env_name: "HumanoidCompactLite-v0"
+
+# Compact observations are easier to model than the full 376-dim state.
+start_timesteps: 50000
+dream_start_step: 75000
+dream_horizon: 4
+epistemic_threshold: 0.4
+num_ensemble: 5

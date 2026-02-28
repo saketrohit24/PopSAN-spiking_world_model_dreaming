@@ -17,14 +17,13 @@ from pathlib import Path
 import yaml
 import numpy as np
 import torch
-import gymnasium as gym
 import wandb
 from torch.utils.tensorboard import SummaryWriter
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from spiking_dreamer import TD3_SpikingDreamer, ReplayBuffer, eval_policy
+from spiking_dreamer import TD3_SpikingDreamer, ReplayBuffer, eval_policy, make_env
 
 
 def load_config(config_path: str, default_path: str = "configs/default.yaml") -> dict:
@@ -77,7 +76,7 @@ def main():
     seed = config["seed"]
     
     # Environment setup
-    env = gym.make(env_name)
+    env = make_env(env_name)
     env.reset(seed=seed)
     env.action_space.seed(seed)
     torch.manual_seed(seed)

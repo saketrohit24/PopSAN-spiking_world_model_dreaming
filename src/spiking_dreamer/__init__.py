@@ -17,6 +17,7 @@ from .actor import SpikeMLP, SNN_Actor
 from .critic import Critic
 from .td3_agent import TD3_SpikingDreamer
 from .eval import eval_policy
+from .envs import HumanoidCompact, make_env
 
 __version__ = "0.1.0"
 __author__ = "Rohit"
@@ -52,4 +53,7 @@ __all__ = [
     "TD3_SpikingDreamer",
     # Evaluation
     "eval_policy",
+    # Environments
+    "HumanoidCompact",
+    "make_env",
 ]
